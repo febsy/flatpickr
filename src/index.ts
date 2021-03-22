@@ -1786,7 +1786,12 @@ function FlatpickrInstance(
     let containsDisabled = false;
 
     let minRange = 0,
-      maxRange = 0;
+        maxRange = 0;
+    if (self.config.maxRange !== undefined)
+    {
+        minRange = initialDate - ((self.config.maxRange - 1) * 86400000);
+        maxRange = initialDate + ((self.config.maxRange - 1) * 86400000);
+    }
 
     for (let t = rangeStartDate; t < rangeEndDate; t += duration.DAY) {
       if (!isEnabled(new Date(t), true)) {

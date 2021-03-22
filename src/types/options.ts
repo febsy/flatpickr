@@ -164,6 +164,9 @@ By default, Flatpickr utilizes native datetime widgets unless certain options (e
   /* The minimum time that a user can start picking from (inclusive). */
   minTime: DateOption;
 
+  /* The maximum range allowed in range mode (inclusive; leave undefined to eliminate limit) */
+  maxRange: number;
+
   /* Adjusts the step for the minute input (incl. scrolling)
   Defaults to 5 */
   minuteIncrement: number;
@@ -310,6 +313,7 @@ export interface ParsedOptions {
   maxTime?: Date;
   minDate?: Date;
   minTime?: Date;
+  maxRange?: number;
   minuteIncrement: number;
   mode: BaseOptions["mode"];
   monthSelectorType: string;
